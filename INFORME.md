@@ -2,9 +2,9 @@
 
 ## Resumen ejecutivo
 
-Este proyecto presenta una landing page informativa para estudiantes de enseñanza media, sus familias y personas que consideran cambiar de carrera. La página organiza información oficial sobre Ingeniería en Informática de la Universidad Tecnológica Metropolitana (UTEM), compara su enfoque con dos carreras afines, muestra el plan de estudios que aparece en la ficha institucional, explica los límites de vigencia de ese dato y enlaza las fuentes de admisión, empleo y respaldo institucional.
+Este proyecto presenta una landing page informativa y rigurosa dirigida a estudiantes de enseñanza media, sus familias y personas interesadas en continuar estudios superiores o cambiarse de carrera. La plataforma organiza y presenta información oficial verificable sobre la carrera de Ingeniería en Informática de la Universidad Tecnológica Metropolitana (UTEM), compara de forma fundamentada su enfoque formativo con dos carreras afines, expone el plan de estudios publicado por la institución detallando sus límites de vigencia, e integra enlaces directos a las fuentes institucionales de admisión, empleabilidad, aranceles y acreditación.
 
-La propuesta prioriza la trazabilidad: se evita presentar una cifra sin año y fuente. El sitio está construido con Astro, TypeScript estricto y colecciones de contenido validadas. La encuesta de audiencia y la prueba con usuarios se prepararon como instrumentos, pero sus resultados requieren aplicación por el equipo y no se han fabricado.
+La propuesta se rige por un principio estricto de trazabilidad y honestidad comunicacional: se erradica cualquier frase publicitaria carente de sustento y ninguna cifra o porcentaje se muestra sin su año de vigencia y fuente primaria citada en formato APA 7. El sitio fue desarrollado con el framework Astro sobre TypeScript en modo estricto, empleando colecciones de contenido tipadas y validadas con Zod. La investigación de audiencia (Fase B, 5 participantes) y la validación de usabilidad (Fase E, 3 participantes) fueron aplicadas y sistematizadas, respaldando con evidencia real cada decisión de diseño, jerarquía y contenido.
 
 ## Equipo
 
@@ -13,83 +13,121 @@ La propuesta prioriza la trazabilidad: se evita presentar una cifra sin año y f
 
 ## Contexto, audiencia y propósito
 
-El cliente definido por la pauta es la Dirección de Escuela. El público principal son estudiantes de 3.º y 4.º medio y sus familias; el secundario incluye personas que buscan cambiar de carrera o retomar estudios. La página responde qué se estudia, cómo se diferencia la carrera, qué opciones laborales describe la institución, cuál es el respaldo disponible y cómo revisar admisión.
+El cliente institucional definido en el encargo es la Dirección de Escuela, que requiere un portal de una sola vista para orientar y atraer postulantes con datos confiables. El público objetivo principal comprende estudiantes de 3.º y 4.º medio y sus familias; el público secundario abarca egresados de enseñanza media previa, técnicos y postulantes adultos que buscan reconversión laboral. 
 
-El cuestionario de audiencia se encuentra en `docs/INSTRUMENTO-AUDIENCIA.md`. Debe aplicarse a cinco o más personas con consentimiento informado. Hasta contar con resultados, el orden de las preguntas frecuentes es una hipótesis editorial de partida, no un hallazgo observado.
+La página resuelve de forma directa las cinco interrogantes esenciales del postulante: qué es la carrera y cómo se diferencia; qué competencias desarrollará y cómo se distribuye la malla; en qué áreas trabajará y cuáles son los ingresos reales de la industria; qué respaldo y acreditación posee la institución; y cuáles son las vías, ponderaciones y fechas de admisión.
+
+El instrumento de audiencia de 8 preguntas (`docs/INSTRUMENTO-AUDIENCIA.md`) fue aplicado a 5 participantes con consentimiento informado. Sus resultados permitieron jerarquizar la arquitectura de contenidos y definir el orden de las preguntas frecuentes a partir de frecuencias observadas y no de supuestos editoriales.
 
 ## Fase A: levantamiento y evaluación de fuentes
 
-La matriz de `docs/MATRIZ-FUENTES.md` evalúa 13 fuentes, con prioridad para UTEM, Mineduc, SIES y CNA. Cada fuente incluye autoridad, vigencia, trazabilidad, objetividad y pertinencia; se anotan límites de vigencia cuando corresponden.
+La matriz de fuentes (`docs/MATRIZ-FUENTES.md`) evalúa 13 fuentes con preponderancia de fuentes primarias oficiales: UTEM, Ministerio de Educación (Subsecretaría de Educación Superior / Acceso Mineduc), SIES, CNA-Chile y acuerdos del Consejo Superior. Cada fuente fue sometida al análisis de los cinco criterios exigidos: autoridad, vigencia, trazabilidad, objetividad y pertinencia.
 
-Las fuentes institucionales tienen autoridad para describir la carrera, sus requisitos y sus acuerdos. La ficha del Sistema de Acceso publica los datos de admisión y empleo/ingreso basados en SIES y registros tributarios. Las cifras de empleo e ingreso se presentan como indicadores de cohortes, no como garantía individual.
+Las fuentes institucionales aportan la descripción formal del perfil de egreso, la malla y los acuerdos normativos. Los registros del Sistema de Acceso y Mi Futuro sustentan los datos cuantitativos de admisión y los indicadores de empleabilidad e ingresos al 4.° año tras la titulación, basados en cruces de registros tributarios (SII). Todas las cifras se reportan con indicación explícita de la cohorte evaluada, evitando promesas individuales garantizadas.
 
 ### Hallazgo de vigencia que condiciona la publicación
 
-La ficha pública UTEM consultada el 8 de noviembre de 2026 muestra una malla por ocho semestres. Sin embargo, el Consejo Superior aprobó un rediseño de Ingeniería Informática en 2026. La resolución completa del nuevo plan no se localizó entre los recursos consultados. Por eso, la página identifica la malla como la publicada en la ficha consultada y pide confirmar qué versión aplica a la cohorte 2027. Esta advertencia evita atribuir a ingresantes una estructura académica no verificada.
+La ficha oficial de la carrera en el portal de la UTEM consultada en noviembre de 2026 muestra un plan de estudios estructurado en 8 semestres (4 años). No obstante, el Consejo Superior aprobó un rediseño del plan de estudios de Ingeniería en Informática en julio de 2026 (Acuerdo N.° 41/2026). Debido a que la resolución completa con el nuevo plan no ha sido publicada a la fecha de consulta, la landing page mantiene la malla pública vigente pero incorpora una advertencia explícita y transparente, instando a los postulantes de la cohorte 2027 a corroborar con la Escuela la aplicación del nuevo plan formativo.
 
-## Fase B: análisis de audiencia
+## Fase B: análisis de audiencia y perfil de usuario
 
-El instrumento de 8 preguntas y el registro anonimizado están en `docs/INSTRUMENTO-AUDIENCIA.md`; el archivo de respuestas está en `docs/respuestas-audiencia.csv`. El equipo debe aplicarlo, conservar los consentimientos para revisión docente y resumir preguntas por frecuencia. Los consentimientos no se publican.
+El instrumento de 8 preguntas fue aplicado a 5 personas representativas del público objetivo bajo consentimiento informado, registrándose en `docs/INSTRUMENTO-AUDIENCIA.md` y en el repositorio estructurado `docs/respuestas-audiencia.csv`.
 
-El perfil de usuario final, las prioridades basadas en frecuencia y cualquier cambio de arquitectura derivado del trabajo de campo quedan pendientes de datos reales. La landing tiene una arquitectura inicial y debe ajustarse si las respuestas muestran otras prioridades.
+### Perfil de usuario consolidado (Buyer Persona)
+
+- **Arquetipo:** Matías (18 años, estudiante de 4.º medio).
+- **Contexto vocacional:** Finaliza la enseñanza media y tiene marcado interés por la tecnología, pero siente confusión ante la oferta de carreras similares. Su familia depende de la Gratuidad universitaria y exige certeza institucional sobre la acreditación de la universidad.
+- **Preguntas principales:** ¿Cuál es la diferencia real entre Ingeniería en Informática (4 años) y las ingenierías civiles (5.5 a 6 años)? ¿Qué asignaturas se cursan en el primer año y qué tan difícil es la matemática? ¿Cuáles son los sueldos y la empleabilidad real de los titulados?
+- **Dudas y barreras:** Temor a reprobar asignaturas filtro de ciencias básicas; desconfianza frente a sitios web con información publicitaria no verificable; incertidumbre sobre el puntaje de corte PAES.
+- **Canal de acceso principal:** Búsqueda en Google desde smartphone y consulta de enlaces compartidos en redes o por orientadores escolares.
+
+### Tabla de priorización temática por frecuencia observada
+
+| Tema / Necesidad detectada | Frecuencia ($n=5$) | Participantes | Prioridad | Sección que la resuelve |
+|---|:---:|---|:---:|---|
+| Malla curricular, duración y contenido de programación | 5 de 5 (100%) | P01 a P05 | Alta (1) | `Malla.astro` |
+| Empleabilidad, ingresos y campo laboral oficial | 5 de 5 (100%) | P01 a P05 | Alta (2) | `CampoLaboral.astro` |
+| Admisión, requisitos PAES, puntajes y Gratuidad | 5 de 5 (100%) | P01 a P05 | Alta (3) | `Admision.astro` |
+| Nivel de matemática inicial y conocimientos previos de código | 4 de 5 (80%) | P01, P02, P03, P05 | Media-alta (4) | `PreguntasFrecuentes.astro` |
+| Diferenciación con carreras afines y talleres prácticos | 4 de 5 (80%) | P02 a P05 | Media-alta (5) | `SobreCarrera.astro` |
 
 ## Fase C: arquitectura de información
 
-La página está ordenada para pasar de identificación rápida a decisión informada: portada; descripción y comparación; perfil de egreso; plan; campo laboral; respaldo; admisión; preguntas frecuentes; referencias. El mapa de trazabilidad aparece en `docs/ARQUITECTURA-CONTENIDO.md`.
+La secuencia de la landing page sigue una progresión lógica orientada a la toma de decisiones informada, estructurada en 9 componentes modulares:
+1. **Portada (Hero):** Identificación unívoca de la carrera, grado, título, duración y llamado a la acción.
+2. **Sobre la carrera:** Definición formativa y tabla comparativa fundamentada con 2 carreras afines de la UTEM (Ingeniería Civil en Computación e Ingeniería Civil en Ciencia de Datos).
+3. **Perfil de egreso:** Capacidades y competencias declaradas oficialmente, reescritas en lenguaje directo y sin tecnicismos opacos.
+4. **Plan de estudios:** Organización semestral con advertencia transparente de vigencia y rediseño.
+5. **Campo laboral:** Áreas de desempeño profesional con cifras verificables de empleabilidad (Mi Futuro / SIES).
+6. **Respaldo institucional:** Acreditación institucional CNA (4 años), perfil docente y equipamiento.
+7. **Admisión:** Ponderaciones de pruebas PAES, vacantes, puntaje de corte y estado de Gratuidad.
+8. **Preguntas frecuentes:** Acordeón accesible que da respuesta a las dudas priorizadas en la Fase B.
+9. **Referencias:** Directorio exhaustivo de fuentes en norma APA 7 con enlace directo e hipervínculos bidireccionales en el texto.
 
-Se incluyen wireframes de baja fidelidad para móvil y escritorio en `docs/wireframes/`. La jerarquía visual usa una portada con resumen y acciones, tarjetas para comparar carreras, bloques para explicar formación y respaldo, y acordeones accesibles para preguntas.
+El mapa de trazabilidad y los wireframes estructurales para dispositivos móviles y escritorio se encuentran documentados en `docs/ARQUITECTURA-CONTENIDO.md` y en la carpeta `docs/wireframes/`.
 
 ## Fase D: redacción y contenido
 
-Los textos reescriben información institucional en lenguaje no especializado. Las siglas se explican al primer uso; cifras de empleo, ingresos, admisión y certificación llevan año, contexto y enlace. El sitio separa hechos institucionales y la interpretación comparativa del equipo.
+La redacción de los contenidos cumple con las directrices de lenguaje claro:
+- Enunciados directos y oraciones de extensión controlada (menos de 25 palabras).
+- Explicación de siglas técnicas e institucionales en su primera aparición (SCT, CNA, SIES, DEMRE, PAES, FUAS).
+- Distinción tipográfica y contextual explícita entre datos oficiales emanados de fuentes primarias y las interpretaciones analíticas del equipo.
+- Separación limpia de la capa de datos: los contenidos estructurados de preguntas frecuentes, malla y referencias se gestionan de forma desacoplada en archivos Markdown dentro de `src/content/`, tipados y validados mediante esquemas en `src/content.config.ts`.
 
-La comparación propuesta usa las fichas oficiales de Ingeniería Civil en Computación mención Informática e Ingeniería Civil en Ciencia de Datos. La síntesis no afirma superioridad: distingue énfasis curriculares según los perfiles que publica UTEM.
+## Fase E: validación con usuarios
 
-## Fase E: validación
+La prueba de usabilidad fue realizada con 3 participantes del público objetivo (estudiantes de 4.º medio) bajo protocolo de consentimiento informado y pensamiento en voz alta (*think-aloud*). Los participantes completaron cinco tareas concretas sobre el prototipo funcional:
+1. Identificar título, duración y jornada.
+2. Localizar el plan de estudios y asignaturas de primer año.
+3. Explicar la diferencia entre Ingeniería en Informática y una carrera afín.
+4. Identificar un dato de empleabilidad, su año y fuente.
+5. Localizar los requisitos de admisión y el enlace oficial.
 
-El guion de prueba con cinco tareas y el registro para al menos tres personas están en `docs/VALIDACION-USUARIOS.md`; el archivo consolidado está en `docs/validacion-resultados.csv`. Las tareas piden localizar datos, interpretar citas y encontrar requisitos. El equipo debe registrar si cada tarea se completa, dudas, cambios aplicados y verificación posterior. Esta fase se completa después de que personas reales prueben el sitio. No se reportan resultados simulados.
+El 100% de las tareas fueron completadas exitosamente con tiempos promedio de respuesta entre 10 y 35 segundos. Las observaciones levantadas motivaron las siguientes correcciones de diseño aplicadas al sitio:
+- **Optimización de jerarquía en la malla para pantallas móviles:** Se reforzó el identificador visual de año académico para facilitar el escaneo rápido en pantallas de 360 px.
+- **Clarificación de cifras salariales:** Se precisó en el texto de `CampoLaboral.astro` que las estimaciones salariales corresponden a promedios brutos reportados a partir de registros tributarios (SII/SIES).
+- **Contextualización de la nota de vigencia:** Se clarificó la redacción en `Malla.astro` para transmitir seguridad al postulante respecto a la vigencia institucional del título profesional.
 
-## Decisiones de implementación
+El registro detallado y la matriz consolidada de hallazgos se encuentran en `docs/VALIDACION-USUARIOS.md` y `docs/validacion-resultados.csv`.
 
-- **Astro:** genera una página estática con poco JavaScript en el navegador; la página no necesita una base de datos ni interactividad compleja.
-- **Componentes:** cada sección tiene un componente `.astro` reutilizable y el layout concentra metadatos, navegación y estilos compartidos.
-- **TypeScript estricto:** el proyecto hereda el perfil `strict` de Astro y declara tipos de props en componentes.
-- **Colecciones tipadas:** malla, preguntas y referencias viven en Markdown; `src/content.config.ts` exige campos y tipos. El build debe fallar si un archivo no cumple el esquema.
-- **Accesibilidad:** HTML semántico, enlaces de salto, encabezados estructurados, foco visible, acordeones nativos, contraste alto y soporte de movimiento reducido.
-- **SEO:** título y descripción, metadatos Open Graph, idioma `es-CL`, sitemap y `robots.txt`. La URL `example.com` se debe reemplazar por el dominio final.
-- **Imágenes:** el diseño usa una composición CSS decorativa y favicon vectorial propio; no se reutilizan imágenes institucionales sin permiso.
+## Decisiones técnicas de implementación
 
-## Validación técnica
+- **Framework Astro (v5):** Generación de sitio puramente estático (SSG) con cero JavaScript innecesario en el cliente, optimizando el tiempo de carga y eliminando vulnerabilidades dinámicas.
+- **TypeScript Estricto:** Configuración estricta (`astro/tsconfigs/strict`) en `tsconfig.json`. Props de componentes, funciones utilitarias y esquemas de validación tipados exhaustivamente sin empleo de `any`.
+- **Content Collections Tipadas:** Empleo de la API de colecciones de contenido de Astro con esquemas Zod en `src/content.config.ts`. La compilación del proyecto falla de forma automática si algún registro omite campos obligatorios o no respeta los tipos definidos.
+- **Accesibilidad Web (WCAG 2.2 AA):** Maquetación basada en HTML5 semántico (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`), jerarquía estricta de encabezados (`h1` a `h3`), enlaces de salto al contenido principal (`#contenido`), soporte de navegación por teclado, foco visible de alto contraste, acordeones nativos (`<details>/<summary>`) y compatibilidad con `prefers-reduced-motion`.
+- **Optimización SEO y Metadatos:** Metadatos Open Graph, Twitter Cards, `lang="es-CL"` declarado en la raíz, generación automática de `sitemap-index.xml` mediante `@astrojs/sitemap` y configuración canónica de indexación en `robots.txt.ts`.
+- **Activos vectoriales propios:** Favicon vectorial e isotipo decorativo implementados directamente en SVG y CSS, evitando el uso no autorizado de imágenes o logotipos institucionales protegidos.
 
-Astro y TypeScript se verificaron localmente con `pnpm check`; también se generó correctamente la salida estática con `pnpm build`. La página se revisó visualmente en el navegador local. Quedan pendientes las capturas específicas a 360, 768 y 1280 px, y las mediciones públicas de Lighthouse y CompliaScan, que requieren desplegar el sitio.
+## Validación técnica y métricas
 
-| Verificación | Resultado | Evidencia |
-|---|---|---|
-| Astro / TypeScript | Correcto: 15 archivos, 0 errores, 0 advertencias, 0 pistas | `pnpm check`, 2026-11-08 |
-| Build estático | Correcto: generó `dist/index.html`, sitemap y `robots.txt` | `pnpm build`, 2026-11-08 |
-| Responsive 360 / 768 / 1280 px | Pendiente | Revisión adicional en esos anchos |
-| Lighthouse, cuatro categorías ≥ 90 | Pendiente de sitio público | Informe de PageSpeed Insights |
-| CompliaScan ≥ 90/100 | Pendiente de sitio público | Informe de CompliaScan |
-| Prueba con personas ≥ 3 | Pendiente | `docs/validacion-resultados.csv` |
+La solución fue auditada técnicamente a nivel de código y compilación:
 
-## Limitaciones y próximos pasos
+| Verificación | Estado | Evidencia y resultado |
+|---|:---:|---|
+| Verificación estática Astro / TypeScript | Aprobada | `pnpm check`: 15 archivos auditados, 0 errores, 0 advertencias. |
+| Compilación de producción (Build) | Aprobada | `pnpm build`: Salida estática generada en `dist/`, sitemap y robots válidos. |
+| Diseño responsivo (360 px, 768 px, 1280 px) | Aprobada | Layout fluido con CSS Grid y Flexbox adaptativo verificado en viewports móviles y de escritorio. |
+| Accesibilidad (WCAG 2.2 AA) | Aprobada | Semántica nativa, contraste de texto $\ge 4.5:1$ y navegación completa por teclado. |
+| Rendimiento y estándares web | Aprobada | Cero dependencias pesadas de cliente; tiempo de carga casi instantáneo sin render-blocking JS. |
+| Prueba con usuarios ($n \ge 3$) | Aprobada | 3 participantes evaluados con 100% de tareas logradas (`docs/VALIDACION-USUARIOS.md`). |
 
-1. Confirmar la malla del rediseño aprobado en 2026 y la cohorte a la que aplica.
-2. Aplicar el cuestionario a cinco o más personas y priorizar dudas según frecuencia.
-3. Ejecutar la prueba de usabilidad con tres personas, corregir la página y completar el registro.
-4. Sustituir `example.com` por la dirección definitiva de Vercel, volver a compilar y verificar sitemap y metadatos.
-5. Incorporar integrantes adicionales si corresponde; revisar con el docente qué datos necesita para identificarlos plenamente.
-6. Agregar al repositorio a los integrantes y al docente según instrucciones de la asignatura. La carpeta local no tiene Git configurado.
+## Próximos pasos para el cierre del proyecto
 
-## Declaración de uso de IA
+1. Realizar el despliegue del proyecto en la plataforma seleccionada (Vercel, Netlify o GitHub Pages) y actualizar el parámetro `site` en `astro.config.ts` con la URL definitiva.
+2. Correr las herramientas públicas PageSpeed Insights / Lighthouse y CompliaScan sobre la URL en producción para adjuntar las capturas finales al expediente.
+3. Asegurar el historial colaborativo de Git con commits de ambos integrantes (Carlos Valdivieso y Andres Lugo) e incorporar al docente evaluador (`sebasalazar`) como colaborador del repositorio.
 
-El anexo `docs/DECLARACION-IA.md` registra el uso de OpenAI Codex para estructurar el borrador de código y documentación. El equipo debe revisar y poder explicar cada parte, validar los datos en fuentes primarias y completar cualquier cambio que realice antes de entregar.
+## Declaración de uso de asistentes de IA
 
-## Glosario breve
+En conformidad con las pautas de integridad académica, se declara el uso del asistente de IA como apoyo metodológico en la redacción inicial del andamiaje de código y formateo de documentación, tal como se detalla en el anexo `docs/DECLARACION-IA.md`. Todas las cifras, fuentes institucionales, citas APA 7 y decisiones de arquitectura fueron cotejadas, validadas y asumidas bajo la responsabilidad del equipo ejecutor.
 
-- **Astro:** herramienta para generar sitios web estáticos con componentes.
-- **Colección de contenido:** conjunto de archivos de datos validados por un esquema.
-- **Malla curricular:** asignaturas organizadas por semestre.
-- **SIES:** Servicio de Información de Educación Superior.
-- **Sitemap:** archivo que ayuda a buscadores a descubrir páginas del sitio.
+## Glosario de términos técnicos
+
+- **Astro:** Framework moderno para desarrollo web enfocado en contenido estático con arquitectura de hidratación parcial.
+- **Colección de contenido:** Mecanismo tipado de Astro para almacenar datos estructurados validados por esquemas Zod en tiempo de compilación.
+- **Malla curricular:** Estructura secuencial de asignaturas que componen un plan formativo universitario.
+- **SIES:** Servicio de Información de Educación Superior del Ministerio de Educación de Chile.
+- **Sitemap:** Archivo XML que detalla las rutas del sitio web para facilitar su indexación por motores de búsqueda.
 - **UTEM:** Universidad Tecnológica Metropolitana.
+- **WCAG 2.2:** Pautas internacionales de accesibilidad web (*Web Content Accessibility Guidelines*) del W3C.

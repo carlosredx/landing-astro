@@ -1,129 +1,112 @@
-# Proyecto web: Ingeniería en Informática UTEM
+# Proyecto web de Ingeniería en Informática UTEM
 
-## Descripción
+## Enlaces principales
 
-Sitio web informativo de una sola página sobre la carrera de Ingeniería en Informática de la Universidad Tecnológica Metropolitana (UTEM). El proyecto organiza información académica y de admisión para que las personas interesadas puedan conocer la carrera, revisar sus fuentes y continuar su investigación en los canales oficiales.
+**[Abrir la landing pública en Vercel](https://landing-astro-rust.vercel.app/)**
 
-La página incluye descripción y perfil de egreso, comparación con carreras afines de la UTEM, malla publicada por la universidad, campo laboral, indicadores de empleo e ingresos, certificación y acreditación institucional, admisión 2027, preguntas frecuentes y referencias.
+[Repositorio público en GitHub](https://github.com/carlosredx/landing-astro)
 
-## Identificación del proyecto
+## Identificación
 
-- **Institución:** Universidad Tecnológica Metropolitana (UTEM).
-- **Carrera:** Ingeniería en Informática.
-- **Cliente institucional definido en la pauta:** Dirección de Escuela.
+- **Asignatura:** EFE685 — Electivo de Computación Móvil.
+- **Institución y carrera:** Universidad Tecnológica Metropolitana (UTEM), Ingeniería en Informática.
+- **Cliente ficticio:** Dirección de Escuela.
 - **Equipo:** Carlos Valdivieso y Andres Lugo.
 - **Público principal:** estudiantes de 3.º y 4.º medio y sus familias.
-- **Público secundario:** personas adultas que evalúan ingresar, retomar estudios o cambiarse de carrera.
+- **Público secundario:** personas adultas que consideran ingresar, retomar estudios o cambiar de carrera.
+- **Fecha de entrega indicada en la pauta:** 13 de noviembre de 2026.
 
-## Objetivo
+## Propósito
 
-Diseñar y desarrollar una página clara, adaptable y verificable que ayude a las personas interesadas a entender qué se estudia en Ingeniería en Informática UTEM, cómo se relaciona con carreras cercanas, qué información oficial existe sobre admisión y campo laboral, y dónde comprobar cada dato.
+La landing presenta información verificable para ayudar a postulantes a entender la carrera, su perfil de egreso, plan de estudios, campo laboral, respaldo institucional y proceso de admisión. Cada afirmación comprobable debe enlazar a una fuente vigente, con fecha o cohorte cuando corresponda. El sitio evita afirmaciones promocionales sin respaldo y distingue los datos institucionales de la interpretación del equipo.
 
-## Alcance y requisitos del proyecto
+## Requisitos de la pauta y estado del proyecto
 
-La propuesta académica organiza el trabajo en cinco fases. Los resultados de investigación y evaluación con personas deben completarse con datos reales del equipo.
+La nota se distribuye en planificación y validación de contenido (50 %), implementación (30 %), informe (15 %) y coevaluación (5 %). La tabla registra qué está preparado y qué exige evidencia del equipo antes de la entrega.
 
-### Fase A — Levantamiento y evaluación de fuentes
+| Fase o requisito | Exigencia de la pauta | Estado y evidencia |
+|---|---|---|
+| **A. Fuentes — 15 %** | Al menos 8 fuentes, con mayoría primarias; referencia APA 7, tipo, fechas, evaluación de autoridad, vigencia, trazabilidad, objetividad y pertinencia, y uso en el sitio. | Matriz de 13 fuentes en [`docs/MATRIZ-FUENTES.md`](docs/MATRIZ-FUENTES.md). Antes de entregar, confirmar que los cinco criterios queden expresados para cada fuente como cumple/no cumple, con su justificación. |
+| **B. Audiencia — 10 %** | Encuesta de 5–8 preguntas o entrevistas a 5 o más personas; consentimiento; perfil de usuario basado en respuestas y preguntas priorizadas por frecuencia. | Instrumento de ocho preguntas: [`docs/INSTRUMENTO-AUDIENCIA.md`](docs/INSTRUMENTO-AUDIENCIA.md), que ahora incluye un escenario sintético para prototipado. El CSV [`docs/respuestas-audiencia.csv`](docs/respuestas-audiencia.csv) conserva solo encabezados: 0 respuestas reales registradas. Los conteos simulados no son evidencia de la Fase B. |
+| **C. Arquitectura — 10 %** | Orden de secciones justificado con hallazgos de audiencia; wireframes para móvil y escritorio; trazabilidad sección → fuente. | Mapa, fuentes y wireframes en [`docs/ARQUITECTURA-CONTENIDO.md`](docs/ARQUITECTURA-CONTENIDO.md) y [`docs/wireframes/`](docs/wireframes/). La justificación del orden es inicial hasta contrastarla con respuestas reales. |
+| **D. Redacción — 10 %** | Lenguaje claro; siglas explicadas; cifras con año y cita enlazada; distinguir datos, interpretación y testimonios; textos alternativos descriptivos si se usan imágenes. | Contenido implementado en el sitio y referencias enlazadas. La prioridad de FAQ debe basarse en la Fase B. Confirmar los créditos SCT con una fuente oficial antes de incorporarlos a la malla. |
+| **E. Validación — 5 %** | Prueba con 3 o más personas del público objetivo; tareas concretas, consentimiento, hallazgos, correcciones y resultados. | Guion y cinco tareas en [`docs/VALIDACION-USUARIOS.md`](docs/VALIDACION-USUARIOS.md). El CSV [`docs/validacion-resultados.csv`](docs/validacion-resultados.csv) contiene solo encabezados: 0 sesiones registradas. |
+| **Informe — 15 %** | Informe autocontenido y dirigido a público no técnico; explicar por qué se eligieron el contenido y las decisiones de implementación; incluir anexos y declaración de IA. | [`INFORME.md`](INFORME.md) y [`docs/DECLARACION-IA.md`](docs/DECLARACION-IA.md) están preparados. Completar perfil, prioridades, resultados, correcciones, coevaluación y el registro real de herramientas, instrucciones y cambios de IA. |
+| **Implementación Astro — 15 %** | Astro estable; Node.js 24 LTS o superior; TypeScript estricto; componentes y layout reutilizables; colecciones tipadas para malla, campo laboral, FAQ y referencias; build que falle si el esquema no se cumple; JavaScript mínimo. | El proyecto usa Astro, TypeScript estricto y colecciones tipadas para malla, FAQ y referencias. El contenido de campo laboral aún está dentro del componente y debe trasladarse a una colección tipada. La isla interactiva se valora si está justificada, pero no es obligatoria. |
+| **Accesibilidad y rendimiento — 10 %** | Diseño responsive probado a 360, 768 y 1280 px; WCAG 2.2 AA; CompliaScan ≥ 90/100; Lighthouse ≥ 90 en Rendimiento, Accesibilidad, Buenas prácticas y SEO. | La estructura incluye navegación por teclado, HTML semántico y estilos adaptables. Falta guardar capturas y resultados reales de las medidas, y corregir cualquier hallazgo. |
+| **Publicación, repositorio y README — 5 %** | Sitio público operativo; repositorio Git con aportes de ambos integrantes, mensajes descriptivos y rama principal estable; agregar al profesor `sebasalazar`; README para personal no técnico. | Sitio desplegado en Vercel y repo público en GitHub. Confirmar la invitación al profesor y commits auténticos de ambos integrantes. Este README explica el proyecto y cómo ejecutarlo y actualizarlo. |
+| **Coevaluación — 5 %** | Aporte equilibrado y evaluación de los integrantes según la pauta. | Completar y entregar según el mecanismo que indique el profesor. |
 
-La matriz evalúa 13 fuentes principalmente primarias según autoridad, vigencia, trazabilidad, objetividad y pertinencia. Cada dato publicado debe poder rastrearse a una fuente y mostrar fecha, cohorte o contexto cuando corresponda. Se priorizan UTEM, el Ministerio de Educación, SIES y CNA.
 
-**Entregable:** [`docs/MATRIZ-FUENTES.md`](docs/MATRIZ-FUENTES.md).
+### Preguntas del instrumento de audiencia
 
-**Hallazgo de vigencia:** la ficha pública de la carrera consultada en noviembre de 2026 muestra una malla de ocho semestres; el Consejo Superior aprobó un rediseño en 2026. La aplicación de la malla visible a la cohorte de Admisión 2027 requiere confirmación institucional. Por eso el sitio la identifica como la malla publicada y advierte que se debe verificar su vigencia.
+1. ¿Qué te gustaría saber antes de considerar Ingeniería en Informática?
+2. ¿Qué te genera más duda sobre la carrera o la vida universitaria?
+3. ¿Qué información te ayudaría a distinguirla de otras carreras de computación o tecnología?
+4. ¿Qué necesitas saber del plan de estudios para decidir?
+5. ¿Qué te gustaría conocer sobre trabajos posibles después de titularte?
+6. ¿Qué necesitas saber sobre admisión, requisitos, costos o beneficios?
+7. ¿Qué podría impedirte postular o hacerte dudar?
+8. ¿Por qué canal buscarías primero esta información?
 
-### Fase B — Investigación de audiencia
+Las respuestas y el perfil se incorporan después de consultar a cinco o más personas reales del público objetivo. Se usan códigos anónimos; los consentimientos se guardan fuera del repositorio público.
+## Alcance y vigencia de la malla UTEM
 
-La pauta requiere consultar al menos a cinco personas del público objetivo, con consentimiento informado. Las respuestas se registran de manera anónima y se usan para resumir las dudas más frecuentes, elaborar el perfil de usuario y ajustar la prioridad del contenido.
+La ficha pública consultada en noviembre de 2026 muestra una malla de ocho semestres, pero UTEM aprobó un rediseño de Ingeniería en Informática durante 2026. La aplicación de la malla y sus créditos a la cohorte 2027 debe confirmarse en una fuente institucional antes de presentarlos como definitivos. El sitio identifica la malla como la publicada en la ficha consultada y mantiene esta advertencia.
 
-**Instrumento y registro:** [`docs/INSTRUMENTO-AUDIENCIA.md`](docs/INSTRUMENTO-AUDIENCIA.md) y [`docs/respuestas-audiencia.csv`](docs/respuestas-audiencia.csv).
+## Tecnologías y ejecución local
 
-**Estado:** el instrumento está preparado; falta aplicarlo. La jerarquía actual de preguntas frecuentes es provisional y no representa resultados de encuesta.
+El sitio usa Astro, TypeScript, colecciones de contenido y pnpm. Se requiere Node.js 24 o superior y Git para el control de versiones.
 
-### Fase C — Arquitectura de información
+Desde PowerShell, abrir la carpeta del proyecto e instalar las dependencias:
 
-El contenido sigue el recorrido de una persona interesada: identificar la carrera, comprender su perfil y plan de estudios, explorar campo laboral y respaldo, revisar admisión y verificar las fuentes. La arquitectura vincula cada sección con las preguntas que responde y con las fuentes correspondientes.
-
-**Entregables:** [`docs/ARQUITECTURA-CONTENIDO.md`](docs/ARQUITECTURA-CONTENIDO.md) y wireframes de baja fidelidad en [`docs/wireframes/`](docs/wireframes/).
-
-### Fase D — Redacción y desarrollo
-
-Los textos usan lenguaje claro, explican siglas y contextualizan cifras. La comparación distingue los perfiles publicados por UTEM y no declara una carrera superior a otra. El sitio separa la información institucional de la interpretación editorial del equipo.
-
-**Entregable:** sitio Astro implementado en `src/`.
-
-### Fase E — Prueba y evaluación con usuarios
-
-La pauta requiere probar el sitio con al menos tres personas usando tareas definidas, registrar si se completan, anotar dudas o dificultades, aplicar mejoras y comprobar los cambios.
-
-**Instrumento y registro:** [`docs/VALIDACION-USUARIOS.md`](docs/VALIDACION-USUARIOS.md) y [`docs/validacion-resultados.csv`](docs/validacion-resultados.csv).
-
-**Estado:** guion y hoja de registro preparados; la prueba debe ejecutarse con personas reales. No se presentan resultados simulados.
-
-## Criterios de evaluación de la pauta
-
-La planificación y validación del contenido representan el 50 %, la implementación el 30 % y el informe y coevaluación el 20 %. Por ese motivo, el proyecto incluye instrumentos, matrices y registros, además del sitio. La documentación preparada no reemplaza la evidencia de encuesta, prueba ni coevaluación que deba producir el equipo.
-
-## Características del sitio
-
-- Diseño adaptable para móvil, tableta y escritorio.
-- Navegación por secciones y enlace para saltar al contenido.
-- HTML semántico, foco visible, acordeones nativos y respeto por la preferencia de movimiento reducido.
-- Referencias enlazadas para verificar las afirmaciones.
-- Colecciones de contenido validadas para preguntas frecuentes, malla y fuentes.
-- Metadatos básicos para buscadores, sitemap y `robots.txt`.
-- Maquetación visual realizada con CSS y un favicon vectorial propio.
-
-## Tecnologías y comandos
-
-El sitio está construido con Astro y TypeScript, y usa pnpm para administrar dependencias. Se requiere Node.js 24 o superior y pnpm.
-
-```bash
+```powershell
 pnpm install
 pnpm dev
 ```
 
-Astro mostrará en la terminal la dirección local para abrir el sitio. Para terminar el servidor, presiona `Ctrl+C`.
+Astro muestra la dirección local en la terminal, normalmente `http://localhost:4321/`. Para detener el servidor, presionar `Ctrl+C`.
 
-Comprobación de tipos y generación de la versión estática:
+Para revisar los tipos y generar los archivos estáticos:
 
-```bash
+```powershell
 pnpm check
 pnpm build
 ```
 
-Los archivos generados para publicar quedan en `dist/`. La comprobación técnica local registrada en este proyecto terminó con 15 archivos, 0 errores, 0 advertencias y 0 pistas. Revisa [`INFORME.md`](INFORME.md) para conocer las verificaciones que faltan.
+La carpeta de salida es `dist/`. La compilación técnica registrada anteriormente terminó sin errores, advertencias ni pistas; las verificaciones de métricas y usuarios se registran por separado en el informe.
 
-## Organización de archivos
+## Actualizar la información
 
-- `src/pages/index.astro`: ensambla la página.
-- `src/components/`: componentes de contenido por sección.
-- `src/layouts/BaseLayout.astro`: estructura general, estilos y metadatos.
-- `src/content.config.ts`: esquemas de validación de contenido.
-- `src/content/faq/`: preguntas frecuentes.
-- `src/content/malla/`: asignaturas por semestre según la ficha consultada.
-- `src/content/referencias/`: fichas de fuentes citadas.
+- **Preguntas frecuentes:** editar los archivos Markdown en `src/content/faq/`. Ajustar preguntas y prioridad después de analizar la encuesta real.
+- **Malla:** editar los archivos Markdown en `src/content/malla/`; respetar la fuente y la advertencia de vigencia.
+- **Fuentes:** editar las referencias Markdown en `src/content/referencias/` y sincronizar los cambios en la matriz y en el informe.
+- **Secciones del sitio:** componentes en `src/components/`; cada dato verificable debe mantener su referencia.
+- **Estilos, metadatos y dominio:** `src/layouts/BaseLayout.astro` y `astro.config.ts`.
+- **Registro de audiencias y validación:** completar los CSV con respuestas y resultados auténticos. No inventar participantes, respuestas, consentimientos ni métricas.
+
+La ruta de los datos y los esquemas se documentan en `src/content.config.ts`. Si un archivo no cumple su esquema, `pnpm check` o el build deben reportarlo.
+
+## Estructura principal
+
+- `src/pages/index.astro`: compone la landing.
+- `src/components/`: secciones reutilizables.
+- `src/layouts/BaseLayout.astro`: estructura común, idioma y metadatos.
+- `src/content.config.ts`: esquemas de las colecciones.
+- `src/content/`: preguntas frecuentes, malla y referencias.
 - `src/pages/robots.txt.ts`: genera `robots.txt` con la dirección del sitemap.
-- `docs/`: instrumentos, documentación, registros y wireframes del proyecto.
-- `INFORME.md`: desarrollo de la propuesta, decisiones, validación y pendientes.
-- `PLANIFICACION.md`: fases, arquitectura y trazabilidad.
-- `YO.md`: guía personal para iniciar el repositorio Git local y correr el sitio.
+- `docs/`: matriz, instrumentos, registros y wireframes.
+- `INFORME.md`: informe académico, decisiones y evidencias.
+- `YO.md`: guía personal de Git y ejecución local.
 
-## Pendientes para cerrar la entrega académica
+## Privacidad e integridad académica
 
-1. Confirmar con UTEM qué malla corresponde a la cohorte de Admisión 2027.
-2. Aplicar el instrumento de audiencia a cinco o más personas y actualizar el contenido con esos resultados.
-3. Probar el sitio con al menos tres personas, registrar hallazgos y hacer las mejoras necesarias.
-4. Completar la coevaluación y los demás antecedentes que solicite el docente.
-5. Revisar la página en 360, 768 y 1280 px.
-6. Cuando el sitio esté desplegado, reemplazar `https://example.com` en `astro.config.ts` por el dominio definitivo y ejecutar las mediciones públicas indicadas por la pauta, incluyendo Lighthouse y CompliaScan.
+Usar códigos anónimos en los resultados de audiencia y pruebas. Los consentimientos se conservan para revisión docente y no se publican en el repositorio. Los RUT u otros identificadores personales tampoco se incluyen en la versión pública; entregar esos datos al profesor por un canal institucional privado si los solicita. Los hallazgos, métricas y créditos académicos deben proceder de registros y fuentes reales.
 
-Las tareas de encuesta, pruebas, confirmación académica y coevaluación requieren participación del equipo; este repositorio no inventa esos resultados.
+## Documentos del proyecto
 
-## Documentación relacionada
-
-- [`INFORME.md`](INFORME.md): informe del proyecto.
-- [`PLANIFICACION.md`](PLANIFICACION.md): organización de fases y entregables.
+- [`INFORME.md`](INFORME.md): informe y estado de validación.
 - [`docs/MATRIZ-FUENTES.md`](docs/MATRIZ-FUENTES.md): evaluación de fuentes.
-- [`docs/INSTRUMENTO-AUDIENCIA.md`](docs/INSTRUMENTO-AUDIENCIA.md): cuestionario y registro de audiencia.
-- [`docs/VALIDACION-USUARIOS.md`](docs/VALIDACION-USUARIOS.md): tareas y evaluación de usabilidad.
-- [`docs/DECLARACION-IA.md`](docs/DECLARACION-IA.md): declaración de uso de IA, para revisión del equipo.
+- [`docs/INSTRUMENTO-AUDIENCIA.md`](docs/INSTRUMENTO-AUDIENCIA.md): preguntas y consentimiento.
+- [`docs/VALIDACION-USUARIOS.md`](docs/VALIDACION-USUARIOS.md): tareas de evaluación.
+- [`docs/DECLARACION-IA.md`](docs/DECLARACION-IA.md): registro del uso de IA.
