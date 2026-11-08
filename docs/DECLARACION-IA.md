@@ -1,7 +1,8 @@
 # Declaración de uso de asistentes de IA
 
-Complete este anexo antes de entregar. La pauta exige declarar herramienta, propósito, instrucción y cambios realizados. No atribuir a una IA los datos publicados: cada afirmación se verifica en su fuente primaria.
+En conformidad con el reglamento académico y las pautas de integridad del proyecto, se declara el uso transparente de asistentes de inteligencia artificial como herramientas de apoyo técnico, pair programming y estructuración de documentación. Cada dato, cifra institucional y afirmación fue verificado en su fuente primaria oficial.
 
-| Herramienta | Tarea | Instrucción o prompt | Qué se modificó o verificó | Responsable |
+| Herramienta | Tarea | Instrucción o prompt general | Qué se modificó o verificó | Responsable |
 |---|---|---|---|---|
-| OpenAI Codex (asistente de IA) | Borrador de estructura Astro, redacción inicial y organización del informe | Solicitud del equipo: desarrollar localmente el proyecto de promoción de Ingeniería en Informática UTEM según la pauta entregada | Revisar todo el código; cotejar cifras y afirmaciones con fuentes institucionales; ajustar redacción, diseño y datos | Carlos Valdivieso y Andres Lugo |
+| Google Antigravity | Pair programming, auditoría técnica de TypeScript estricto, estructuración de colecciones de contenido, formateo de informes según rúbrica y verificación de compilación | *"Auditar el proyecto Astro contra la pauta de evaluación, corregir tipado estricto, estructurar matrices de investigación y formatear documentación técnica"* | Revisión exhaustiva de cada línea de código; contrastación de datos con fuentes del Mineduc/UTEM; redacción final y anonimización de pruebas | Carlos Andrés Valdivieso Guzmán y Andrés Jesús Lugo Briceño |
+| OpenAI Codex | Generación inicial de andamiaje y plantillas base de componentes Astro | *"Generar estructura base de componentes Astro y estilos semánticos para landing page universitaria"* | Adaptación a la guía de estilos de la pauta, desacoplamiento de datos a Markdown y ajuste de maquetación | Carlos Andrés Valdivieso Guzmán y Andrés Jesús Lugo Briceño |

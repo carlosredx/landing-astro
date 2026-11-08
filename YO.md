@@ -2,16 +2,19 @@
 
 ## 1. Herramientas necesarias
 
-Instalar Node.js 24 o superior y Git para Windows si aún no están instalados. Después, en PowerShell, comprobar qué herramientas están instaladas:
+Instalar Node.js 24 o superior y Git para Windows si aún no están instalados. Para instalar `pnpm` (el gestor de paquetes del proyecto), ejecutar:
 
 ```powershell
-if (-not (Get-Command pnpm -ErrorAction SilentlyContinue)) { npm install --global pnpm }
+npm install --global pnpm
+```
+
+Luego, comprobar que las versiones estén correctamente instaladas:
+
+```powershell
 node --version
 git --version
 pnpm --version
 ```
-
-Si Node.js o Git ya están instalados, no hace falta reinstalarlos. Si pnpm ya está disponible, basta con revisar `pnpm --version`.
 
 ## 2. Abrir la carpeta correcta
 

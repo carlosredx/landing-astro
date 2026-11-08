@@ -8,8 +8,8 @@ La propuesta se rige por un principio estricto de trazabilidad y honestidad comu
 
 ## Equipo
 
-- Carlos Valdivieso
-- Andres Lugo
+- **Carlos Andrés Valdivieso Guzmán** (`cvaldiviesog@utem.cl`)
+- **Andrés Jesús Lugo Briceño** (`alugo@utem.cl`)
 
 ## Contexto, audiencia y propósito
 
@@ -120,12 +120,12 @@ El sitio web se encuentra desplegado y operativo en producción en la siguiente 
 
 ### Pasos finales de entrega:
 1. Ejecutar las mediciones públicas de calidad en PageSpeed Insights / Lighthouse y CompliaScan sobre la URL de producción `https://landing-astro-bice.vercel.app/`.
-2. Registrar los commits de ambos integrantes del equipo (Carlos Valdivieso y Andres Lugo) para reflejar el historial colaborativo de Git.
+2. Registrar los commits de ambos integrantes del equipo (Carlos Andrés Valdivieso Guzmán y Andrés Jesús Lugo Briceño) para reflejar el historial colaborativo de Git.
 3. Confirmar la invitación al docente evaluador (`sebasalazar`) como colaborador en el repositorio de GitHub.
 
 ## Declaración de uso de asistentes de IA
 
-En conformidad con las pautas de integridad académica, se declara el uso del asistente de IA como apoyo metodológico en la redacción inicial del andamiaje de código y formateo de documentación, tal como se detalla en el anexo `docs/DECLARACION-IA.md`. Todas las cifras, fuentes institucionales, citas APA 7 y decisiones de arquitectura fueron cotejadas, validadas y asumidas bajo la responsabilidad del equipo ejecutor.
+En conformidad con las pautas de integridad académica, se declara el uso de los asistentes de IA Google Antigravity y OpenAI Codex como apoyo técnico y metodológico en la auditoría de código, verificación de TypeScript estricto y formateo de documentación, tal como se detalla en el anexo `docs/DECLARACION-IA.md`. Todas las cifras, fuentes institucionales, citas APA 7 y decisiones de arquitectura fueron cotejadas, validadas y asumidas bajo la responsabilidad del equipo ejecutor.
 
 ## Glosario de términos técnicos
 

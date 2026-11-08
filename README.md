@@ -11,7 +11,9 @@
 - **Asignatura:** EFE685 — Electivo de Computación Móvil.
 - **Institución y carrera:** Universidad Tecnológica Metropolitana (UTEM), Ingeniería en Informática.
 - **Cliente ficticio:** Dirección de Escuela.
-- **Equipo:** Carlos Valdivieso y Andres Lugo.
+- **Equipo:**
+  - Carlos Andrés Valdivieso Guzmán (`cvaldiviesog@utem.cl`)
+  - Andrés Jesús Lugo Briceño (`alugo@utem.cl`)
 - **Público principal:** estudiantes de 3.º y 4.º medio y sus familias.
 - **Público secundario:** personas adultas que consideran ingresar, retomar estudios o cambiar de carrera.
 - **Fecha de entrega indicada en la pauta:** 13 de noviembre de 2026.
