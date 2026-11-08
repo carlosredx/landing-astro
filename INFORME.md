@@ -112,11 +112,16 @@ La solución fue auditada técnicamente a nivel de código y compilación:
 | Rendimiento y estándares web | Aprobada | Cero dependencias pesadas de cliente; tiempo de carga casi instantáneo sin render-blocking JS. |
 | Prueba con usuarios ($n \ge 3$) | Aprobada | 3 participantes evaluados con 100% de tareas logradas (`docs/VALIDACION-USUARIOS.md`). |
 
-## Próximos pasos para el cierre del proyecto
+## Despliegue y próximos pasos para el cierre del proyecto
 
-1. Realizar el despliegue del proyecto en la plataforma seleccionada (Vercel, Netlify o GitHub Pages) y actualizar el parámetro `site` en `astro.config.ts` con la URL definitiva.
-2. Correr las herramientas públicas PageSpeed Insights / Lighthouse y CompliaScan sobre la URL en producción para adjuntar las capturas finales al expediente.
-3. Asegurar el historial colaborativo de Git con commits de ambos integrantes (Carlos Valdivieso y Andres Lugo) e incorporar al docente evaluador (`sebasalazar`) como colaborador del repositorio.
+El sitio web se encuentra desplegado y operativo en producción en la siguiente URL oficial:
+- **Sitio publicado:** [https://landing-astro-bice.vercel.app/](https://landing-astro-bice.vercel.app/)
+- **Repositorio de código:** [https://github.com/carlosredx/landing-astro](https://github.com/carlosredx/landing-astro)
+
+### Pasos finales de entrega:
+1. Ejecutar las mediciones públicas de calidad en PageSpeed Insights / Lighthouse y CompliaScan sobre la URL de producción `https://landing-astro-bice.vercel.app/`.
+2. Registrar los commits de ambos integrantes del equipo (Carlos Valdivieso y Andres Lugo) para reflejar el historial colaborativo de Git.
+3. Confirmar la invitación al docente evaluador (`sebasalazar`) como colaborador en el repositorio de GitHub.
 
 ## Declaración de uso de asistentes de IA
 

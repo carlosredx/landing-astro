@@ -2,7 +2,7 @@
 
 ## Enlaces principales
 
-**[Abrir la landing pública en Vercel](https://landing-astro-rust.vercel.app/)**
+**[Abrir la landing pública en Vercel](https://landing-astro-bice.vercel.app/)**
 
 [Repositorio público en GitHub](https://github.com/carlosredx/landing-astro)
 
