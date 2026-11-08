@@ -1,0 +1,10 @@
+---
+import type { CollectionEntry } from 'astro:content';
+interface Props { items: CollectionEntry<'referencias'>[] }
+const { items } = Astro.props;
+const sorted = [...items].sort((a,b) => a.data.idFuente.localeCompare(b.data.idFuente, 'es'));
+---
+<section class="section section-dark references" id="referencias" aria-labelledby="refs-title">
+  <div class="section-heading"><p class="eyebrow">08 · Fuentes</p><h2 id="refs-title">Verifica cada dato</h2><p>Las fuentes enlazan a instituciones responsables de los datos. Fecha de consulta de las páginas: 8 de noviembre de 2026.</p></div>
+  <ol class="reference-list">{sorted.map((ref) => <li id={`ref-${ref.data.idFuente}`}><span class="ref-id">{ref.data.idFuente}</span><div><strong>{ref.data.organizacion}. <em>{ref.data.titulo}</em></strong><p>{ref.data.uso}</p><small>Dato: {ref.data.fechaDato} · Consulta: {ref.data.fechaConsulta}</small><a href={ref.data.url} target="_blank" rel="noreferrer">Abrir fuente oficial ↗</a></div></li>)}</ol>
+</section>

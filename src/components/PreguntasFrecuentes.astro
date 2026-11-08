@@ -1,0 +1,11 @@
+---
+import { render, type CollectionEntry } from 'astro:content';
+interface Props { items: CollectionEntry<'faq'>[] }
+const { items } = Astro.props;
+const rendered = await Promise.all(items.map(async (item) => ({ item, Content: (await render(item)).Content })));
+---
+<section class="section section-paper" id="preguntas" aria-labelledby="faq-title">
+  <div class="section-heading"><p class="eyebrow">07 · Dudas frecuentes</p><h2 id="faq-title">Respuestas para seguir investigando</h2><p>Estas preguntas de partida se contrastarán con las respuestas reales del cuestionario de audiencia, incluido en el informe.</p></div>
+  <div class="faq-list">{rendered.map(({ item, Content }) => <details class="faq-item"><summary><span>{item.data.pregunta}</span><span class="faq-plus" aria-hidden="true">+</span></summary><div class="faq-answer"><Content /><p class="small-source">Fuentes: {item.data.fuentes.map((source, index) => <span><a href={`#ref-${source}`}>{source}</a>{index < item.data.fuentes.length - 1 ? ', ' : ''}</span>)}</p></div></details>)}</div>
+  <p class="notice">Prioridad actual: orden inicial editorial, no resultado de encuesta. Actualizar este orden con los datos del equipo.</p>
+</section>

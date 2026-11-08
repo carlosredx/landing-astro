@@ -1,0 +1,23 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import SobreCarrera from '../components/SobreCarrera.astro';
+import PerfilEgreso from '../components/PerfilEgreso.astro';
+import Malla from '../components/Malla.astro';
+import CampoLaboral from '../components/CampoLaboral.astro';
+import Respaldo from '../components/Respaldo.astro';
+import Admision from '../components/Admision.astro';
+import PreguntasFrecuentes from '../components/PreguntasFrecuentes.astro';
+import Referencias from '../components/Referencias.astro';
+const terms = (await getCollection('malla')).sort((a,b) => a.data.semestre - b.data.semestre);
+const faqs = (await getCollection('faq')).sort((a,b) => a.data.prioridad - b.data.prioridad);
+const references = await getCollection('referencias');
+const description = 'Conoce Ingeniería en Informática en la UTEM: perfil, plan de estudios publicado, campo laboral y admisión 2027, con fuentes oficiales verificables.';
+---
+<BaseLayout title="Ingeniería en Informática · UTEM" description={description}>
+  <header class="topbar"><div class="nav-wrap"><a class="brand" href="#inicio" aria-label="UTEM, Ingeniería en Informática, inicio"><span class="brand-mark" aria-hidden="true">UTEM</span><span class="brand-text">Ingeniería en Informática<small>Universidad Tecnológica Metropolitana</small></span></a><nav class="nav-links" aria-label="Navegación principal"><a href="#carrera">La carrera</a><a href="#perfil">Perfil</a><a href="#plan">Malla</a><a href="#campo">Campo laboral</a><a href="#admision" class="nav-cta">Admisión 2027 ↗</a></nav></div></header>
+  <main id="contenido"><Hero title="Aprende a diseñar soluciones informáticas" subtitle="Explora el perfil, el plan publicado y los requisitos con referencias oficiales antes de postular." /><SobreCarrera /><PerfilEgreso /><Malla terms={terms} /><CampoLaboral /><Respaldo /><Admision /><PreguntasFrecuentes items={faqs} /><Referencias items={references} /></main>
+  <footer class="footer"><p>Proyecto académico · Carlos Valdivieso y Andres Lugo</p><p><a href="https://www.utem.cl/carreras/ingenieria-en-informatica/" target="_blank" rel="noreferrer">Ficha oficial de UTEM ↗</a></p></footer>
+</BaseLayout>
+

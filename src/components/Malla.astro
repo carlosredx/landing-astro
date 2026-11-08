@@ -1,0 +1,10 @@
+---
+import type { CollectionEntry } from 'astro:content';
+interface Props { terms: CollectionEntry<'malla'>[] }
+const { terms } = Astro.props;
+---
+<section class="section section-paper" id="plan" aria-labelledby="plan-title">
+  <div class="section-heading"><p class="eyebrow">03 · Tu recorrido</p><h2 id="plan-title">Plan de estudios publicado por UTEM</h2><p>La ficha institucional consultada en 2026 organiza la malla en ocho semestres. Explora las asignaturas por semestre.</p><p class="notice"><strong>Confirma la vigencia:</strong> UTEM aprobó un rediseño de Ingeniería Informática en julio de 2026. La nueva malla aplicable a cada cohorte aún no aparece en las fuentes consultadas. <a href="#ref-F03">Acuerdo UTEM · F03</a>.</p></div>
+  <div class="semester-grid">{terms.map((term) => <article class="semester-card"><p class="semester-year">Año {term.data.anio} · Semestre {term.data.semestre}</p><h3>Semestre {term.data.semestre}</h3><ul>{term.data.asignaturas.map((subject) => <li>{subject}</li>)}</ul><a class="small-source" href="#ref-F01">Ficha UTEM · {term.data.fuente}</a></article>)}</div>
+  <p class="source-note">Asignaturas según la <a href="#ref-F01">ficha pública UTEM</a>, consultada en 2026. Confirma su aplicación para la cohorte 2027.</p>
+</section>
